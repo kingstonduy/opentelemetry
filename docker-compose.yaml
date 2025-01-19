@@ -1,3 +1,4 @@
+version: "3.8"
 services:
     jaeger:
         image: jaegertracing/all-in-one:latest
@@ -15,3 +16,8 @@ services:
             - "14268:14268"
             - "14269:14269"
             - "9411:9411"
+        volumes:
+            - jaeger-data:/data # Mount volume to persist data
+
+volumes:
+    jaeger-data:
